@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T.I.B.Y.A.N. | Mentor Dashboard</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#F0F9FF', 500: '#0EA5E9', 900: '#0F172A' },
+            slate: { 800: '#1E293B', 900: '#0F172A' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans h-screen flex overflow-hidden">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-slate-900 text-white flex flex-col h-full shrink-0 shadow-xl z-20 relative">
+    <div class="p-6 border-b border-white/10 flex items-center gap-3">
+      <div class="w-8 h-8 bg-brand-500 rounded text-white flex items-center justify-center font-bold text-xs tracking-widest">TB</div>
+      <div>
+        <h1 class="font-bold text-lg leading-none tracking-tight">T.I.B.Y.A.N.</h1>
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Silent Systems</p>
+      </div>
+    </div>
+    
+    <nav class="flex-grow p-4 space-y-2">
+      <a href="#" class="block px-4 py-3 bg-brand-500 rounded-lg font-medium text-sm shadow-md">
+        📥 Admissions
+      </a>
+      <a href="#" class="block px-4 py-3 hover:bg-white/5 rounded-lg font-medium text-sm text-gray-300 transition-colors">
+        📋 Attendance
+      </a>
+      <a href="#" class="block px-4 py-3 hover:bg-white/5 rounded-lg font-medium text-sm text-gray-300 transition-colors">
+        🛂 Passports
+      </a>
+    </nav>
+    
+    <div class="p-4 border-t border-white/10">
+      <a href="index.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">← Back to Site</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow flex flex-col h-full overflow-hidden bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-8 py-6 shrink-0 flex justify-between items-center z-10 shadow-sm">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Admissions Pipeline</h2>
+        <p class="text-gray-500 text-sm mt-1">Manage incoming leads and program placement.</p>
+      </div>
+      <button onclick="clearData()" class="px-4 py-2 text-sm text-red-600 bg-red-50 hover:bg-red-100 rounded-lg font-medium transition-colors border border-red-200">
+        Clear Test Data
+      </button>
+    </header>
+
+    <!-- Kanban Board -->
+    <div class="flex-grow p-8 overflow-x-auto">
+      <div class="flex gap-6 h-full min-w-max">
+        
+        <!-- Column 1: New Leads -->
+        <div class="w-80 h-full flex flex-col">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span> New Leads
+            </h3>
+            <span id="count-new" class="bg-gray-200 text-gray-600 text-xs font-bold px-2 py-1 rounded-full">0</span>
+          </div>
+          <div id="col-new" class="flex-grow bg-gray-200/50 rounded-xl p-3 space-y-3 overflow-y-auto">
+            <!-- Cards injected via JS -->
+          </div>
+        </div>
+
+        <!-- Column 2: Contacted -->
+        <div class="w-80 h-full flex flex-col">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span> Contacted
+            </h3>
+            <span id="count-contacted" class="bg-gray-200 text-gray-600 text-xs font-bold px-2 py-1 rounded-full">0</span>
+          </div>
+          <div id="col-contacted" class="flex-grow bg-gray-200/50 rounded-xl p-3 space-y-3 overflow-y-auto">
+             <!-- Cards injected via JS -->
+          </div>
+        </div>
+
+        <!-- Column 3: Enrolled -->
+        <div class="w-80 h-full flex flex-col">
+          <div class="flex items-center justify-between mb-4 px-1">
+            <h3 class="font-bold text-slate-800 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Enrolled
+            </h3>
+            <span id="count-enrolled" class="bg-gray-200 text-gray-600 text-xs font-bold px-2 py-1 rounded-full">0</span>
+          </div>
+          <div id="col-enrolled" class="flex-grow bg-gray-200/50 rounded-xl p-3 space-y-3 overflow-y-auto">
+             <!-- Cards injected via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
