@@ -1,0 +1,179 @@
+/* ============================================================
+   Buana Studio v2 — Sunnah-Inspired Ecosystem
+   Theme: Editorial, Traditional Adab, Deeply Human
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Editorial Palette */
+  --bg-primary: #F9F6F0;     /* Warm Ivory */
+  --bg-secondary: #EBE6DC;   /* Muted Earth */
+  --bg-card: #F9F6F0;        /* Seamless cards */
+
+  /* Text Colors */
+  --text-primary: #1C2321;   /* Deep charcoal */
+  --text-secondary: #4A514E; /* Softer charcoal */
+  --text-muted: #828A87;
+
+  /* Accents */
+  --accent-pine: #1F4529;    /* Deep traditional green */
+  --accent-camel: #D4A373;   /* Warmth, craft, gold */
+  
+  /* Typography */
+  --font-display: 'Lora', serif; /* Traditional, elegant */
+  --font-body: 'Inter', sans-serif;
+
+  /* Layout */
+  --nav-height: 90px;
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+  --transition: all 0.5s var(--ease);
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(3rem, 7vw, 5rem); letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+h4 { font-size: 1.25rem; }
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-camel);
+  margin-bottom: 1.5rem;
+}
+
+p { color: var(--text-secondary); font-size: 1.05rem; }
+.lead { font-size: 1.35rem; font-family: var(--font-display); font-style: italic; color: var(--accent-pine); max-width: 800px; line-height: 1.6; }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+
+/* --- Layout Systems --- */
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 8rem 0; position: relative; border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+.grid { display: grid; gap: 3rem; }
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* --- Navigation --- */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height);
+  background: rgba(249, 246, 240, 0.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 100; display: flex; align-items: center;
+}
+.logo {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+  display: flex; align-items: center; gap: 0.75rem; color: var(--accent-pine);
+}
+.logo-mark {
+  width: 12px; height: 12px; transform: rotate(45deg);
+  background: var(--accent-camel); display: inline-block;
+}
+.nav-links { display: none; }
+@media (min-width: 768px) {
+  .nav-links { display: flex; gap: 3rem; align-items: center; }
+  .nav-links a { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary); }
+  .nav-links a:hover { color: var(--accent-pine); }
+}
+
+/* --- Language Toggle --- */
+[data-lang="id"] .en { display: none !important; }
+[data-lang="en"] .id { display: none !important; }
+
+.lang-switch {
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; color: var(--text-muted);
+}
+.lang-switch span.active { color: var(--accent-pine); border-bottom: 1px solid var(--accent-pine); }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.05em;
+  padding: 1rem 2.5rem; cursor: pointer; transition: var(--transition);
+  text-transform: uppercase;
+}
+.btn-primary {
+  background: var(--accent-pine); color: #fff;
+}
+.btn-primary:hover { background: #132a18; }
+.btn-outline {
+  background: transparent; color: var(--accent-pine); border: 1px solid var(--accent-pine);
+}
+.btn-outline:hover { background: var(--accent-pine); color: #fff; }
+
+/* --- Hero --- */
+.hero {
+  padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 6rem;
+  text-align: center; background: var(--bg-primary); border-bottom: none;
+}
+.hero-content { max-width: 900px; margin: 0 auto; }
+
+/* --- Editorial Layout (No Cards) --- */
+.editorial-block {
+  border-top: 1px solid rgba(0,0,0,0.1); padding-top: 2rem;
+  transition: var(--transition);
+}
+.editorial-block:hover { border-top-color: var(--accent-pine); }
+.editorial-block h3 { color: var(--accent-pine); }
+.editorial-meta {
+  display: block; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent-camel); margin-bottom: 1rem;
+}
+
+/* --- Photo Grid --- */
+.photo-showcase {
+  display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 4rem; height: 400px;
+}
+@media (min-width: 768px) {
+  .photo-showcase { grid-template-columns: 2fr 1fr; }
+}
+.photo-frame {
+  background: var(--bg-secondary); overflow: hidden; position: relative;
+}
+.photo-frame::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(31, 69, 41, 0.4), transparent);
+}
+.pf-label {
+  position: absolute; bottom: 2rem; left: 2rem; color: #fff;
+  z-index: 2; font-family: var(--font-display); font-size: 1.5rem; font-style: italic;
+}
+
+/* --- Animations --- */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
