@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buana Active | Meaningful Youth Activities</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Nunito (Friendly/Rounded) & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:ital,wght@0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Config for the "Alive" Palette -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Nunito', 'sans-serif'],
+          },
+          colors: {
+            sunny: { 50: '#FFFCF5', 100: '#FEF3C7', 400: '#FBBF24', 500: '#F59E0B' },
+            emerald: { 50: '#ECFDF5', 500: '#10B981', 600: '#059669', 900: '#064E3B' },
+            charcoal: { 800: '#1F2937', 900: '#111827' }
+          },
+          boxShadow: {
+            'pop-emerald': '0 8px 0 0 #059669',
+            'pop-sunny': '0 8px 0 0 #D97706',
+            'soft-xl': '0 20px 40px -15px rgba(0,0,0,0.05)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Bouncy Reveal Animations */
+    .bounce-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .bounce-up.visible { opacity: 1; transform: translateY(0); }
+    
+    /* Bilingual toggle */
+    [data-lang="id"] .en { display: none !important; }
+    [data-lang="en"] .id { display: none !important; }
+  </style>
+</head>
+<body class="bg-sunny-50 text-charcoal-800 font-sans antialiased overflow-x-hidden" data-lang="en">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-sunny-50/80 backdrop-blur-xl border-b border-sunny-100">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center shadow-sm">
+            <div class="w-3 h-3 bg-white rounded-full"></div>
+          </div>
+          <span class="font-display font-bold text-2xl tracking-tight text-charcoal-900">Buana Active</span>
+        </div>
+        <div class="hidden md:flex items-center bg-white border border-sunny-200 rounded-full px-3 py-1 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-sunny-500 mr-2"></span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-charcoal-500">Part of Buana Studios</span>
+        </div>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-8 font-display font-bold text-charcoal-800">
+        <a href="#activities" class="hover:text-emerald-500 transition-colors"><span class="en">Activities</span><span class="id">Aktivitas</span></a>
+        <a href="#parents" class="hover:text-emerald-500 transition-colors"><span class="en">For Parents</span><span class="id">Untuk Orang Tua</span></a>
+        <a href="#network" class="hover:text-emerald-500 transition-colors"><span class="en">Our Studios</span><span class="id">Studio Kami</span></a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="lang-switch" class="font-display font-bold px-4 py-2 rounded-full bg-white shadow-sm border border-sunny-100 hover:shadow-md transition-all text-charcoal-900">
+          <span id="btn-en" class="text-emerald-600">EN</span> / <span id="btn-id">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. HERO SECTION (Dribbble Layout) -->
+  <section class="pt-36 pb-24 px-6 relative overflow-hidden">
+    <!-- Decorative background blobs -->
+    <div class="absolute top-20 -left-20 w-96 h-96 bg-sunny-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+    <div class="absolute top-40 -right-20 w-96 h-96 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      
+      <!-- Copy Side -->
+      <div class="bounce-up">
+        <div class="inline-block px-4 py-2 rounded-full bg-sunny-100 text-sunny-500 font-display font-bold tracking-widest uppercase text-sm mb-6 border border-sunny-400/20">
+          <span class="en">Bandung, Indonesia</span><span class="id">Bandung, Indonesia</span>
+        </div>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.1] text-charcoal-900 mb-2 tracking-tight">
+          <span class="en">Welcome to<br><span class="text-emerald-500">Buana Active!</span></span>
+          <span class="id">Selamat Datang di<br><span class="text-emerald-500">Buana Active!</span></span>
+        </h1>
+        <p class="font-display font-bold text-xl text-sunny-500 mb-6">
+          <span class="en">A Buana Studios Initiative.</span><span class="id">Sebuah Inisiatif Buana Studios.</span>
+        </p>
+        <p class="text-xl text-charcoal-800 mb-10 max-w-lg font-medium leading-relaxed">
+          <span class="en">We build meaningful afterschool activities and outdoor experiences that help youth grow, step away from passive scrolling, and build real confidence.</span>
+          <span class="id">Kami membangun aktivitas pascasekolah dan pengalaman luar ruangan yang membantu pemuda tumbuh, menjauh dari sekadar menggulir layar, dan membangun kepercayaan diri sejati.</span>
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#activities" class="px-8 py-4 rounded-full bg-emerald-500 text-white font-display font-bold text-lg text-center shadow-pop-emerald hover:translate-y-1 hover:shadow-[0_4px_0_0_#059669] transition-all active:translate-y-2 active:shadow-none">
+            <span class="en">Explore Activities</span><span class="id">Jelajahi Aktivitas</span>
+          </a>
+          <a href="#parents" class="px-8 py-4 rounded-full bg-white text-charcoal-900 font-display font-bold text-lg text-center shadow-sm border-2 border-sunny-100 hover:border-sunny-400 hover:bg-sunny-50 transition-all">
+            <span class="en">Why Parents Love Us</span><span class="id">Mengapa Orang Tua Menyukai Kami</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Side (Overlapping energetic layout) -->
+      <div class="relative h-[500px] hidden lg:block bounce-up" style="transition-delay: 200ms;">
+        <!-- Hero Illustration -->
+        <img src="assets/hero_kids_outdoor_1779044642430.png" alt="Kids outdoor activities" class="absolute top-0 right-0 w-[450px] h-[450px] object-cover rounded-[3rem] shadow-soft-xl border-8 border-white rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+        
+        <!-- Supporting Element -->
+        <div class="absolute bottom-10 left-0 w-64 p-6 bg-white rounded-[2rem] shadow-soft-xl border border-sunny-100 z-30 -rotate-3 hover:rotate-0 transition-transform duration-500">
+          <div class="flex items-center gap-4 mb-2">
+            <div class="w-12 h-12 rounded-full bg-sunny-100 flex items-center justify-center text-2xl">🌟</div>
+            <h4 class="font-display font-bold text-xl text-charcoal-900">Active Daily</h4>
+          </div>
+          <p class="text-sm font-medium text-charcoal-800"><span class="en">Real routines outside the classroom.</span><span class="id">Rutinitas nyata di luar kelas.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. WHAT WE DO (Carousel-style blocks) -->
+  <section id="activities" class="py-24 px-6 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 bounce-up">
+        <h2 class="font-display text-4xl md:text-5xl font-black text-charcoal-900 mb-6 tracking-tight">
+          <span class="en">Meaningful Activities</span><span class="id">Aktivitas Bermakna</span>
+        </h2>
+      </div>
+      
+      <div id="activities-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <!-- Rendered via JS -->
+      </div>
+      
+      <!-- Language Philosophy Banner -->
+      <div class="bg-gradient-to-r from-sunny-100 to-amber-100 rounded-[2rem] p-8 md:p-12 shadow-inner border border-sunny-200 text-center bounce-up mb-24">
+        <h3 class="font-display font-black text-3xl md:text-4xl text-charcoal-900 mb-4 tracking-tight">
+          <span class="en">We speak it. We don't just study it.</span>
+          <span class="id">Kami mempraktikkannya. Kami tidak sekadar mempelajarinya.</span>
+        </h3>
+        <p class="text-charcoal-800 text-lg md:text-xl max-w-3xl mx-auto font-medium">
+          <span class="en">Grammar on paper is easily forgotten. At Buana Active, English and Arabic are seamlessly woven into every hike, swim, and martial arts session through active, natural conversation.</span>
+          <span class="id">Tata bahasa di atas kertas mudah dilupakan. Di Buana Active, bahasa Inggris dan Arab ditenun secara mulus ke dalam setiap sesi pendakian, renang, dan seni bela diri melalui percakapan alami yang aktif.</span>
+        </p>
+      </div>
+
+      <!-- NEW: Assessment Framework (Milestone Passport) -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center bounce-up">
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-emerald-100 text-emerald-700 font-display font-bold tracking-widest uppercase text-sm mb-4 border border-emerald-400/20">
+            <span class="en">How We Measure Growth</span><span class="id">Bagaimana Kami Mengukur Pertumbuhan</span>
+          </span>
+          <h2 class="font-display text-4xl md:text-5xl font-black text-charcoal-900 mb-6 tracking-tight">
+            <span class="en">No Grammar Tests.<br>Real Milestones.</span>
+            <span class="id">Bukan Ujian Tata Bahasa.<br>Milestone Nyata.</span>
+          </h2>
+          <p class="text-lg text-charcoal-800 font-medium mb-6 leading-relaxed">
+            <span class="en">Every child grows at their own pace. If a child is shy, we don't punish them with a low grade. Instead, mentors track <b>Behavioral Milestones</b> using our internal systems.</span>
+            <span class="id">Setiap anak tumbuh dengan kecepatannya sendiri. Jika seorang anak pemalu, kami tidak menghukum mereka dengan nilai rendah. Sebaliknya, mentor melacak <b>Milestone Perilaku</b> menggunakan sistem internal kami.</span>
+          </p>
+          <p class="text-lg text-charcoal-800 font-medium leading-relaxed">
+            <span class="en">You will receive qualitative reports detailing their confidence, character (Adab), and conversational courage in real-world scenarios. We measure if they have the confidence to lead, not just if they can spell.</span>
+            <span class="id">Anda akan menerima laporan kualitatif yang merinci kepercayaan diri, karakter (Adab), dan keberanian percakapan mereka dalam skenario dunia nyata. Kami mengukur apakah mereka memiliki kepercayaan diri untuk memimpin, bukan hanya apakah mereka bisa mengeja.</span>
+          </p>
+        </div>
+
+        <!-- UI Mockup: The Milestone Passport -->
+        <div class="bg-white rounded-[2rem] p-8 shadow-soft-xl border border-sunny-100 rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div class="flex items-center gap-4 mb-8 border-b border-earth-100 pb-6">
+            <div class="w-16 h-16 rounded-full bg-sunny-400 flex items-center justify-center text-2xl shadow-inner">
+              🛂
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-2xl text-charcoal-900 leading-none mb-1">
+                <span class="en">Milestone Passport</span><span class="id">Paspor Milestone</span>
+              </h3>
+              <p class="text-charcoal-500 text-sm font-medium">
+                <span class="en">Mentor Observational Log</span><span class="id">Log Observasi Mentor</span>
+              </p>
+            </div>
+          </div>
+          
+          <div id="milestones-container" class="space-y-2">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </div>
+      <!-- End Assessment Framework -->
+
+    </div>
+  </section>
+
+  <!-- 3. HOW WE LEARN (With Mentor Illustration) -->
+  <section class="py-24 px-6 bg-emerald-50 rounded-[3rem] max-w-[95%] mx-auto my-12 shadow-inner">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative h-[450px] bounce-up">
+        <img src="assets/mentor_learning_1779044829603.png" alt="Mentorship" class="absolute inset-0 w-full h-full object-cover rounded-[2.5rem] shadow-soft-xl border-8 border-white -rotate-2 hover:rotate-1 transition-transform duration-500">
+      </div>
+      <div class="bounce-up">
+        <h2 class="font-display text-4xl md:text-5xl font-black text-emerald-900 mb-6 tracking-tight">
+          <span class="en">Growth Through Environment</span><span class="id">Pertumbuhan Melalui Lingkungan</span>
+        </h2>
+        <p class="text-lg text-emerald-900/80 mb-8 font-medium">
+          <span class="en">Character isn't built by just reading about courage. It is built by standing at the edge of a cold pool at 6 AM, or navigating a mountain trail alongside mentors who care.</span>
+          <span class="id">Karakter tidak dibangun hanya dengan membaca tentang keberanian. Ia dibangun dengan berdiri di tepi kolam yang dingin pada jam 6 pagi, atau menavigasi jalur pegunungan bersama mentor yang peduli.</span>
+        </p>
+        <div id="principles-container" class="space-y-4">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY PARENTS LOVE US -->
+  <section id="parents" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto text-center bounce-up">
+      <h2 class="font-display text-4xl md:text-5xl font-black text-charcoal-900 mb-16 tracking-tight">
+        <span class="en">Why Parents Love Us</span><span class="id">Mengapa Orang Tua Menyukai Kami</span>
+      </h2>
+      <div id="reasons-container" class="grid md:grid-cols-2 gap-8 text-left">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. UMBRELLA NETWORK & BACKEND SUPPORT -->
+  <section id="network" class="py-24 px-6 bg-charcoal-900 text-white rounded-[3rem] max-w-[95%] mx-auto my-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 bounce-up">
+        <div>
+          <h2 class="font-display text-4xl md:text-5xl font-black mb-4 tracking-tight">
+            <span class="en">Explore the Buana Network</span><span class="id">Jelajahi Jaringan Buana</span>
+          </h2>
+          <p class="text-sunny-100 text-lg font-medium max-w-xl">
+            <span class="en">Buana Active is just one part of a much larger ecosystem. Discover the other studios driving our vision forward.</span>
+            <span class="id">Buana Active hanyalah satu bagian dari ekosistem yang jauh lebih besar. Temukan studio lain yang mendorong visi kami maju.</span>
+          </p>
+        </div>
+      </div>
+      
+      <!-- Network Grid -->
+      <div id="network-container" class="grid md:grid-cols-3 gap-6 mb-20">
+        <!-- Rendered via JS -->
+      </div>
+      
+      <!-- Boutique & Backend Note -->
+      <div class="pt-16 border-t border-white/10 bounce-up grid md:grid-cols-2 gap-12 text-left">
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-sunny-100 text-xs font-bold tracking-widest uppercase mb-4">
+            <span class="en">The Boutique Model</span><span class="id">Model Eksklusif</span>
+          </span>
+          <h4 class="font-display font-bold text-2xl mb-2"><span class="en">Lead Architect</span><span class="id">Arsitek Utama</span></h4>
+          <p class="text-sm text-white/70 font-medium">
+            <span class="en">Buana Active is a highly-focused, boutique ecosystem curated by one Lead Mentor. Core disciplines are taught directly, while specialized skills (Aikido, Climbing) are led by carefully selected Ecosystem Partners. Quality over quantity.</span>
+            <span class="id">Buana Active adalah ekosistem eksklusif yang sangat fokus yang dikurasi oleh satu Mentor Utama. Disiplin inti diajarkan langsung, sementara keterampilan khusus dipimpin oleh Mitra Ekosistem terpilih. Kualitas di atas kuantitas.</span>
+          </p>
+        </div>
+        <div>
+          <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-sunny-100 text-xs font-bold tracking-widest uppercase mb-4">
+            <span class="en">Operational Infrastructure</span><span class="id">Infrastruktur Operasional</span>
+          </span>
+          <h4 class="font-display font-bold text-2xl mb-2"><span class="en">Silent Systems</span><span class="id">Sistem Senyap</span></h4>
+          <p class="text-sm text-white/70 font-medium">
+            <span class="en">To maintain this boutique quality without burnout, all studios are fully supported by Buana Systems (T.I.B.Y.A.N. ERP), handling all attendance and scheduling behind the scenes. Mentors teach; systems manage.</span>
+            <span class="id">Untuk mempertahankan kualitas eksklusif ini tanpa kelelahan, semua studio didukung penuh oleh Buana Systems (T.I.B.Y.A.N. ERP), yang menangani semua kehadiran di belakang layar. Mentor mengajar; sistem mengelola.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-charcoal-900 font-medium pb-20">
+    <div class="font-display font-black text-2xl mb-2">Buana Active</div>
+    <p class="text-sm opacity-60 mb-2">
+      <span class="en">A proud member of the Buana Studios Network.</span>
+      <span class="id">Anggota bangga dari Jaringan Buana Studios.</span>
+    </p>
+    <p class="text-sm opacity-60">
+      <span class="en">A happy, healthy environment for meaningful youth development.</span>
+      <span class="id">Lingkungan bahagia dan sehat untuk perkembangan pemuda yang bermakna.</span>
+    </p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
