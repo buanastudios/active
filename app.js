@@ -39,6 +39,7 @@ function renderDynamicData() {
   if (!window.BUANA_DATA) return;
   renderActivities();
   renderMilestones();
+  renderBlueprint();
   renderReasons();
   renderUpcoming();
   renderNetwork();
@@ -86,6 +87,20 @@ function renderMilestones() {
         <h4 class="font-display font-bold text-lg text-charcoal-900">${currentLang === 'en' ? m.titleEn : m.titleId}</h4>
         <p class="text-sm text-charcoal-800 font-medium">${currentLang === 'en' ? m.descEn : m.descId}</p>
       </div>
+    </div>
+  `).join('');
+}
+
+function renderBlueprint() {
+  const container = document.getElementById('blueprint-container');
+  if (!container) return;
+  container.innerHTML = window.BUANA_DATA.blueprint.map((b, i) => `
+    <div class="bg-white p-6 rounded-[2rem] border border-sunny-100 shadow-soft-xl bounce-up hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden" style="transition-delay: ${i * 100}ms">
+      <div class="w-14 h-14 rounded-2xl ${b.color || 'bg-emerald-100 text-emerald-600'} flex items-center justify-center text-2xl mb-5 shadow-sm">
+        ${b.icon}
+      </div>
+      <h4 class="font-display font-bold text-xl text-charcoal-900 mb-2 leading-tight tracking-tight">${currentLang === 'en' ? b.titleEn : b.titleId}</h4>
+      <p class="text-charcoal-700 font-medium text-sm leading-relaxed">${currentLang === 'en' ? b.descEn : b.descId}</p>
     </div>
   `).join('');
 }

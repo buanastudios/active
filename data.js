@@ -64,6 +64,30 @@ const BUANA_DATA = {
       nameId: "Panjat Tebing",
       descEn: "Advanced physical problem-solving on the wall, guided by certified climbing experts.",
       descId: "Pemecahan masalah fisik tingkat lanjut di dinding, dipandu oleh pakar panjat tebing bersertifikat."
+    },
+    {
+      id: "act-math",
+      icon: "🧮",
+      color: "bg-purple-100 text-purple-600",
+      languages: ["English", "Indonesian"],
+      instructorEn: "Core Mentorship",
+      instructorId: "Mentorship Inti",
+      nameEn: "Fun Math (Pre-K to Primary)",
+      nameId: "Matematika Seru (TK - SD)",
+      descEn: "Making numbers tactile and exciting for early learners and primary students through logic games and active problem-solving, not just worksheets.",
+      descId: "Membuat angka menjadi nyata dan menarik bagi anak usia prasekolah (TK) hingga SD melalui permainan logika dan pemecahan masalah aktif, bukan sekadar lembar kerja."
+    },
+    {
+      id: "act-speaking",
+      icon: "🎙️",
+      color: "bg-pink-100 text-pink-600",
+      languages: ["English", "Indonesian"],
+      instructorEn: "Core Mentorship",
+      instructorId: "Mentorship Inti",
+      nameEn: "Public Speaking & Adab",
+      nameId: "Berbicara di Depan Umum",
+      descEn: "Overcoming stage fright and building articulate, confident leaders who can express their ideas clearly and respectfully.",
+      descId: "Mengatasi demam panggung dan membangun pemimpin yang pandai bicara, percaya diri, yang dapat mengekspresikan ide mereka dengan jelas dan penuh hormat."
     }
   ],
 
@@ -88,6 +112,41 @@ const BUANA_DATA = {
       titleId: "Adab dalam Tindakan",
       descEn: "Demonstrates patience (Sabr) and brotherhood (Ukhuwah) when a teammate struggles.",
       descId: "Menunjukkan kesabaran (Sabr) dan persaudaraan (Ukhuwah) saat teman satu tim kesulitan."
+    }
+  ],
+
+  blueprint: [
+    {
+      icon: "💡",
+      color: "bg-indigo-100 text-indigo-600",
+      titleEn: "Fathonah (The Innovator)",
+      titleId: "Fathonah (Sang Inovator)",
+      descEn: "Cultivating critical thinking and digital creation through Coding, Design, and Fun Math.",
+      descId: "Menumbuhkan pemikiran kritis dan penciptaan digital melalui Pemrograman, Desain, dan Matematika Seru."
+    },
+    {
+      icon: "🗣️",
+      color: "bg-pink-100 text-pink-600",
+      titleEn: "Siddiq (The Truth Teller)",
+      titleId: "Siddiq (Penyampai Kebenaran)",
+      descEn: "Building absolute integrity and confident articulation through Public Speaking and Adab.",
+      descId: "Membangun integritas mutlak dan artikulasi yang percaya diri melalui Berbicara di Depan Umum dan Adab."
+    },
+    {
+      icon: "🛡️",
+      color: "bg-emerald-100 text-emerald-600",
+      titleEn: "Amanah (The Guardian)",
+      titleId: "Amanah (Penjaga Kepercayaan)",
+      descEn: "Teaching responsibility and environmental stewardship through Mountain Navigation and teamwork.",
+      descId: "Mengajarkan tanggung jawab dan pelestarian lingkungan melalui Navigasi Gunung dan kerja tim."
+    },
+    {
+      icon: "⚔️",
+      color: "bg-orange-100 text-orange-600",
+      titleEn: "Tabligh (The Ambassador)",
+      titleId: "Tabligh (Sang Duta)",
+      descEn: "Forging courage and physical readiness through Sunnah sports like Archery, Swimming, and Martial Arts.",
+      descId: "Membangun keberanian dan kesiapan fisik melalui olahraga Sunnah seperti Panahan, Renang, dan Seni Bela Diri."
     }
   ],
 
@@ -135,22 +194,22 @@ const BUANA_DATA = {
       name: "Buana Systems",
       icon: "⚙️",
       color: "bg-charcoal-800 text-white",
-      descEn: "Building robust, offline-first operational software (like T.I.B.Y.A.N. ERP) for disciplined communities.",
-      descId: "Membangun perangkat lunak operasional offline-first yang kuat (seperti ERP T.I.B.Y.A.N.) untuk komunitas yang disiplin."
+      descEn: "Building the custom apps and tools (like T.I.B.Y.A.N.) that keep our studios running smoothly without paperwork.",
+      descId: "Membangun aplikasi dan alat khusus (seperti T.I.B.Y.A.N.) yang membuat studio kami berjalan lancar tanpa dokumen yang merepotkan."
     },
     {
       name: "Buana Spaces",
       icon: "🏗️",
       color: "bg-emerald-600 text-white",
-      descEn: "Designing and maintaining physical co-living and productive workspaces for continuous growth.",
-      descId: "Merancang dan memelihara ruang hidup bersama fisik dan ruang kerja produktif untuk pertumbuhan berkelanjutan."
+      descEn: "Designing warm, welcoming physical spaces where our communities can live, work, and grow together.",
+      descId: "Merancang ruang fisik yang hangat dan ramah di mana komunitas kami dapat hidup, bekerja, dan tumbuh bersama."
     },
     {
       name: "Buana Foundation",
       icon: "🌱",
       color: "bg-sunny-500 text-white",
-      descEn: "Our non-profit arm dedicated to social outreach, community registries, and accessible youth mentorship.",
-      descId: "Lembaga nirlaba kami yang didedikasikan untuk penjangkauan sosial, pendaftaran komunitas, dan bimbingan pemuda yang dapat diakses."
+      descEn: "The heart of our community! Focused on social outreach and making mentorship accessible to everyone.",
+      descId: "Jantung komunitas kami! Berfokus pada penjangkauan sosial dan membuat bimbingan dapat diakses oleh semua orang."
     }
   ]
 };
